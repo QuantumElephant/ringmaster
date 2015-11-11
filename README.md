@@ -1,2 +1,2 @@
 # ringmaster
-HORTON quality assurance scripts and configs.
+HORTON project's quality assurance repository

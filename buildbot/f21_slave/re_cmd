@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build -t buildslave_f21 . && docker stop bbsf && docker rm bbsf && docker run --name bbsf --dns 8.8.8.8 --link bbm:bbm -dit buildslave_f21
