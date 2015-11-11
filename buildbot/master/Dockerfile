@@ -21,8 +21,9 @@ RUN groupadd -r buildbot && useradd -r -g buildbot buildbot
 RUN mkdir /buildbot && chown buildbot:buildbot /buildbot
 USER buildbot
 WORKDIR /buildbot
-ADD master.cfg /buildbot/master.cfg
-ADD secrets.py /buildbot/secrets.py
+ADD master.cfg /master.cfg
+ADD secrets.py /secrets.py
+ENV PYTHONPATH=/
 #ENTRYPOINT ["/bin/bash"]
 ENTRYPOINT ["/usr/bin/buildbot"]
 CMD ["start", "--nodaemon"]
