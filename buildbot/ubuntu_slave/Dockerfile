@@ -28,7 +28,7 @@ RUN mkdir /buildslave && chown buildbot:buildbot /buildslave
 RUN mkdir /home/buildbot && chown buildbot:buildbot /home/buildbot
 USER buildbot
 WORKDIR /buildslave
-RUN buildslave create-slave . clifford.chemistry.mcmaster.ca:9989 bot-u15-04-2 ZGWfFZ5AjBFJ6twVL2uYY9AFh
+RUN buildslave create-slave . bbm:9989 bot-u15-04 bot-u15-04_key
 ENTRYPOINT ["/usr/bin/buildslave"]
 CMD ["start", "--nodaemon"]
 

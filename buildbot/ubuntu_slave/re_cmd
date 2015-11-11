@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t buildslave_u15 . && docker stop bbsu && docker rm bbsu && docker run --name=bbsu --dns 8.8.8.8 -dit buildslave_u15
+docker build -t buildslave_u15 . && docker stop bbsu && docker rm bbsu && docker run --dns 8.8.8.8 --name bbsu --link bbm:bbm -dit buildslave_u15
