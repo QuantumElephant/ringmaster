@@ -14,7 +14,7 @@ vim \
 git \
 links \ 
 pyOpenSSL
-RUN pip install buildbot
+RUN pip install buildbot txgithub service_identity
 RUN python -mmock
 RUN PYTHONPATH=. trial buildbot.test
 RUN groupadd -r buildbot && useradd -r -g buildbot buildbot
