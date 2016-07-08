@@ -1,4 +1,4 @@
-FROM ubuntu:vivid
+FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y apt-utils
 RUN apt-get upgrade -y && apt-get install -y \
@@ -28,7 +28,7 @@ RUN mkdir /buildslave && chown buildbot:buildbot /buildslave
 RUN mkdir /home/buildbot && chown buildbot:buildbot /home/buildbot
 USER buildbot
 WORKDIR /buildslave
-RUN buildslave create-slave . bbm:9989 bot-u15-04 bot-u15-04_key
+RUN buildslave create-slave . bbm:9989 bot-ubuntu bot-ubuntu_key
 ENTRYPOINT ["/usr/bin/buildslave"]
 CMD ["start", "--nodaemon"]
 

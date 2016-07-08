@@ -1,4 +1,4 @@
-FROM fedora:21
+FROM fedora:23
 RUN yum update -y && yum install -y \
 buildbot-slave \
 python-devel \
@@ -28,7 +28,7 @@ RUN mkdir /buildslave && chown buildbot:buildbot /buildslave
 RUN mkdir /home/buildbot && chown buildbot:buildbot /home/buildbot
 USER buildbot
 WORKDIR /buildslave
-RUN buildslave create-slave . bbm:9989 bot-f21-x64-deps bot-f21-x64-deps_key
+RUN buildslave create-slave . clifford.chemistry.mcmaster.ca:9989 bot-fedora-x64-deps-2 Ujqu1LqPAJktsT7MJDZpfYC6M1Mn
 ENTRYPOINT ["/usr/bin/buildslave"]
 CMD ["start", "--nodaemon"]
 
